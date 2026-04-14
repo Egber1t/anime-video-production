@@ -199,8 +199,10 @@ def load_config():
         sys.exit(1)
     return load_json(CONFIG_FILE)
 
+DREAMINA_EXE = os.environ.get("DREAMINA_EXE", "dreamina")
+
 def run_dreamina(cmd_args, record_key=None, dry_run=False):
-    full = ["dreamina"] + [str(a) for a in cmd_args]
+    full = [DREAMINA_EXE] + [str(a) for a in cmd_args]
     print(f"\n{'[DRY-RUN] ' if dry_run else '▶ '}{' '.join(full)}")
     if dry_run:
         return "dry-run-id"
