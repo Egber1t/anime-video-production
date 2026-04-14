@@ -586,13 +586,13 @@ def cmd_videos(draft=False, vip=False, ep_filter=None, dry_run=False):
             print(f"\n  ▶ 段{seg_num:02d}-{seg_name} → {fname}")
             print_image_order(labeled)
 
-            # --images 按顺序传入，空格分隔
+            # --image 重复传入（单数），每张图一个 --image 参数
             # prompt里 @参考图1=第1张, @参考图2=第2张, 以此类推
             img_paths = [str(path) for path, key, lbl in labeled]
 
             cmd_args = [
                 "multimodal2video",
-                "--images", *img_paths,
+                *[f"--image={p}" for p in img_paths],
                 f"--prompt={prompt_text}",
                 f"--duration={SEG_DURATION}",
                 f"--ratio={VIDEO_RATIO}",
