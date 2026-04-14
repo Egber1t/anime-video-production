@@ -390,7 +390,7 @@ python3 auto_submit.py check-prompt --ep EP01
 python3 auto_submit.py check-timeline --ep EP01
 cat ./gate_results/EP01_gate.json
 
-# 轮询下载
+# 轮询下载（下载完成后自动改名：{submit_id}_video_1.mp4 → 第XX集XX段-段名.mp4）
 python3 auto_submit.py poll
 ```
 
