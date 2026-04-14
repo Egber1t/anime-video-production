@@ -57,7 +57,7 @@ from datetime import datetime
 # 固定参数
 SEG_DURATION   = 15    # 每段视频固定15s
 TRANS_DURATION = 4     # 转场固定4s
-VIDEO_RATIO    = "9:16"
+VIDEO_RATIO    = "16:9"
 RESOLUTION     = "2k"
 
 # 模型通道（--model 参数值）
